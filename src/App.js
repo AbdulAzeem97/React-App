@@ -21,7 +21,7 @@ function Work() {
 //   return <h2>checking making one more function</h2>;
 // }
 export default Work;
-// export default Work;/
+// export default Work;
 // export default work;
 // export default work;
 // var student = { name: "React Class", type: "bootcamp" };
