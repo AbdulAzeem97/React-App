@@ -1,26 +1,27 @@
 import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import Checking from "./check.js";
+// function App() {
 
-function App() {
+//   return (<div className="App">
+//     {/* <Checking />  */}
+//      </div>;)
+// }
+
+function Work() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and jaounga m mujhe umeed hai.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Checking newcheck=" lelo" checkagain=" rechecking bhai" />
+      <Checking newcheck=" khana" checkagain=" han to han   " />
+      <Checking newcheck=" pporty " checkagain=" rechecking bhai" />
+      <p1>hello world</p1>
     </div>
   );
 }
-
-export default App;
+// function work() {
+//   return <h2>checking making one more function</h2>;
+// }
+export default Work;
+// export default Work;/
+// export default work;
+// export default work;
+var student = { name: "React Class", type: "bootcamp" };
