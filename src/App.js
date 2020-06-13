@@ -24,4 +24,4 @@ export default Work;
 // export default Work;/
 // export default work;
 // export default work;
-var student = { name: "React Class", type: "bootcamp" };
+// var student = { name: "React Class", type: "bootcamp" };
