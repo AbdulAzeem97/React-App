@@ -1,98 +1,39 @@
-import React, { useEffect } from "react";
-import { New } from "./New";
+import React, { useEffect, useState } from 'react';
+import './App.css';
 
-// //   return (<div className="App">
-// //     {/* <Checking />  */}
-// //      </div>;)
-// // }
-
-// function printGreeting(msg, alertGreet) {
-//   if (msg === "evening") {
-//     evening(alertGreet);
-//   } else if (msg === "morning") {
-//     morning(alertGreet);
-//   } else {
-//     night(alertGreet);
-//   }
-// }
-
-// // function alertGreet(msg) {
-// //   alert(msg);
-// // }
-
-// // breakfast();
-// function morning(alertGreet) {
-//   alert("Good Morning ");
-//   alertGreet("Hello WOrld");
-// }
-
-// // breakfast();
-// function evening(alertGreet) {
-//   alert("Good Evening ");
-//   alertGreet("Hello WOrld");
-// }
-
-// function night(alertGreet) {
-//   alert("Good Night");
-//   alertGreet("Hello WOrld");
-// }
-// // function alertGreet(msg) {
-// //   alert(msg);
-// // }
-// printGreeting("night", alertGreet);
 function App() {
-  useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/posts/1")
-      .then((response) => response.json())
-      .then((json) => console.log(json));
-  }, []);
-  
-  // console.log(" Start Game");
 
-  // function breakfast() {
-  //   setTimeout(function () {
-  //     console.log("breakfast complete");
-  //   }, 100);
-  // }
+  const [repos, setRepos] = useState([{}]);
 
-  // morning();
-  // console.log("End Game");
-  return <New />;
+  useEffect( () => {
+
+    async function getRepos() {
+      const response = await fetch("https://api.github.com/users/abdulazeem97/repos")
+      const data = await response.json();
+      console.log(data);
+      setRepos(data)
+    }
+    getRepos();
+
+    // "https://api.github.com/users/muhammadmohsin/repos"
+    // fetch('https://jsonplaceholder.typicode.com/posts/1')
+    //   .then(response => response.json())
+    //   .then(json => {
+    //     console.log(json);
+    //     setData(json);
+    //   })
+  },[])
+
+  return (
+    <div className="App">
+      <h1>You are seeing all repositories</h1>
+      <ul>
+        {repos.map((repoObj, ind) => {
+          return (<li key={ind}>{repoObj.name}</li>)
+        })}
+      </ul>
+    </div>
+  );
 }
-// console.log("azeem");
 
-// setTimeout(function check() {
-//   console.log("Async func check");
-// }, 1000);
-
-// setTimeout(function check1() {
-//   console.log("Async func check2");
-
-//   console.log("RE INIT");
-// }, 2000);
-
-// setTimeout(function check3(){
-//   console.log("Value rechecking");
-// },3000);
-
-// function App() {
-//   // return <h2>checking making one more function</h2>;
-
-//   return (
-//     <div>
-//       <h1>
-//         adding the content
-//       </h1>
-//       <h2>
-//         content adding init
-
-//       </h2>
-//     </div>
-//   )
-// }
-// console.log("subhan");
-
-// // export default Work;
 export default App;
-// export default work;
-// var student = { name: "React Class", type: "bootcamp" };
