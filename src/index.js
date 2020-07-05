@@ -1,6 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
+import {CallBack} from "./CallBack"
+// import New from "./New";
+
 import App from "./App";
 // import Checking from "./check.js";
 
@@ -9,7 +12,10 @@ import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App /> 
+    <CallBack />
+    
+    {/* <New /> */}   
     {/* <Work /> */}
     {/* <Checking /> */}
     {/* <Checking /> */}
